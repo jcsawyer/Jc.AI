@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="Jc.AI.Models.Tests/Jc.AI.Models.Tests.csproj" />
+  <Project Path="Jc.AI.Models/Jc.AI.Models.csproj" />
   <Project Path="Jc.AI.Tokenization.Tests/Jc.AI.Tokenization.Tests.csproj" />
   <Project Path="Jc.AI.Tokenization/Jc.AI.Tokenization.csproj" />
 </Solution>
