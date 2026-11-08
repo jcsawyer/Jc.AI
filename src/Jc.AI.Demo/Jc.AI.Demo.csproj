@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Jc.AI.Models\Jc.AI.Models.csproj" />
       <ProjectReference Include="..\Jc.AI.Tokenization\Jc.AI.Tokenization.csproj" />
     </ItemGroup>
 
