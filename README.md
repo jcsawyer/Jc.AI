@@ -38,3 +38,13 @@ The bundled dataset in `data/facts.txt` produces a vocabulary of 29 code units. 
 The counted bigram model learns how often each token follows another (at this point, a token is a single character), then uses those counts with add-one smoothing to predict and generate the next character. It considers only the previous token, so generated text captures local character patterns but has little word or sentence structure.
 
 The vocabulary and counts are trained on the `data/facts.txt` from part 1. The additional text in `data/validation.txt` measures how well the model predicts unseen text without training on it. Loss is the average negative log-probability of each next token - lower is better. A uniform baseline provides a comparison with guessing every token equally.
+
+## Building a Tiny GPT - Part 3
+
+- [Building a Tiny GPT - Part 3](https://jcsawyer.com/blog/2026-11-08-building-a-tiny-gpt-part-3)
+
+### Learning with a Linear Neuron
+
+Part 3 introduces a linear neuron that predicts `weight * input + bias`. Starting from zero, it learns the rule `y = 2x + 1` from five numerical examples by adjusting its weight and bias with gradient descent to reduce mean squared error.
+
+The demo checks the calculated gradients against numerical estimates, shows progress over 100 updates, and predicts `7` for the unseen input `3`. Tests cover the gradients, parameter updates, convergence, and invalid input.
