@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <InternalsVisibleTo Include="Jc.AI.Demo" />
         <InternalsVisibleTo Include="Jc.AI.Tokenization.Tests" />
     </ItemGroup>
         
