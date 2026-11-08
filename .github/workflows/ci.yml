@@ -33,3 +33,9 @@ jobs:
 
       - name: Run tokenize demo with testing
         run: dotnet src/Jc.AI.Demo/bin/Release/net10.0/Jc.AI.Demo.dll tokenize testing
+
+      - name: Run bigram demo
+        run: dotnet src/Jc.AI.Demo/bin/Release/net10.0/Jc.AI.Demo.dll bigram
+
+      - name: Run neuron demo
+        run: dotnet src/Jc.AI.Demo/bin/Release/net10.0/Jc.AI.Demo.dll neuron
