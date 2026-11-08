@@ -24,3 +24,12 @@ jobs:
 
       - name: Run unit tests
         run: dotnet test src/Jc.AI.slnx --configuration Release --no-build
+
+      - name: Run data demo
+        run: dotnet src/Jc.AI.Demo/bin/Release/net10.0/Jc.AI.Demo.dll data
+
+      - name: Run tokenize demo
+        run: dotnet src/Jc.AI.Demo/bin/Release/net10.0/Jc.AI.Demo.dll tokenize
+
+      - name: Run tokenize demo with testing
+        run: dotnet src/Jc.AI.Demo/bin/Release/net10.0/Jc.AI.Demo.dll tokenize testing

@@ -11,6 +11,9 @@ try
         case ["--help"]:
             PrintHelp();
             return 0;
+        case ["data"]:
+            PrintData();
+            return 0;
         case ["tokenize"]:
             PrintTokenization();
             return 0;
@@ -46,6 +49,16 @@ static void PrintHelp()
     Counts come from facts.txt; validation.txt is scored separately.
     The neuron demo uses five numerical examples and 100 gradient-descent updates.
     """ );
+}
+
+static void PrintData()
+{
+    var text = Dataset.Load();
+    var measurement = Dataset.Measure(text);
+    Console.WriteLine(text);
+    Console.WriteLine($"Lines: {measurement.Lines}");
+    Console.WriteLine($"Words: {measurement.Words}");
+    Console.WriteLine($"UTF-16 code units: {measurement.CodeUnits}");
 }
 
 static void PrintTokenization(string? input = null)
