@@ -75,7 +75,6 @@ static void PrintHelp()
     dotnet run -- bigram ["PROMPT"] [--seed N]
                                       Count pairs, score, and generate text
     dotnet run -- neuron [--rate R]    Train one linear neuron (default rate: 0.1)
-                                      
     dotnet run -- xor [--seed N]       Fit XOR with a 2-4-1 network (default seed: 42)
 
     Bigram defaults: prompt "Mira", seed 42, 120 new characters.
