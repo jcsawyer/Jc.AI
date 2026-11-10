@@ -39,3 +39,6 @@ jobs:
 
       - name: Run neuron demo
         run: dotnet src/Jc.AI.Demo/bin/Release/net10.0/Jc.AI.Demo.dll neuron
+
+      - name: Run XOR demo
+        run: dotnet src/Jc.AI.Demo/bin/Release/net10.0/Jc.AI.Demo.dll xor
