@@ -44,6 +44,13 @@ try
             && double.IsFinite(rate) && rate > 0:
             PrintNeuron(rate);
             return 0;
+        case ["xor"]:
+            XorDemo.Run(42);
+            return 0;
+        case ["xor", "--seed", var xorSeedText] when
+            int.TryParse(xorSeedText, NumberStyles.Integer, CultureInfo.InvariantCulture, out var xorSeed):
+            XorDemo.Run(xorSeed);
+            return 0;
         default:
             Console.Error.WriteLine("Invalid command or arguments. Use 'help' for usage information.");
             return 1;
@@ -68,10 +75,12 @@ static void PrintHelp()
     dotnet run -- bigram ["PROMPT"] [--seed N]
                                       Count pairs, score, and generate text
     dotnet run -- neuron [--rate R]    Train one linear neuron (default rate: 0.1)
-                                      
+    dotnet run -- xor [--seed N]       Fit XOR with a 2-4-1 network (default seed: 42)
+
     Bigram defaults: prompt "Mira", seed 42, 120 new characters.
     Counts come from facts.txt; validation.txt is scored separately.
     The neuron demo uses five numerical examples and 100 gradient-descent updates.
+    The XOR demo compares a linear baseline with a network trained for 10000 updates.
     """ );
 }
 
@@ -156,7 +165,7 @@ static void PrintNeuron(double learningRate)
     Console.WriteLine(FormattableString.Invariant($"Learning rate: {learningRate:G}; updates: 100; initial weight: 0; initial bias: 0"));
     Console.WriteLine(FormattableString.Invariant($"Initial analytic gradients: weight={initial.WeightGradient:F6}, bias={initial.BiasGradient:F6}"));
     Console.WriteLine(FormattableString.Invariant($"Initial numerical gradients: weight={numerical.Weight:F6}, bias={numerical.Bias:F6}"));
-    Console.WriteLine("Gradient check: PASS (epsilon=1E-6, absolute tolerance=1E-6)");
+    Console.WriteLine("Gradient check (epsilon=1E-6, absolute tolerance=1E-6)");
     Console.WriteLine("Step | Weight | Bias | Mean squared error");
     for (var step = 0; step <= 100; step++)
     {
