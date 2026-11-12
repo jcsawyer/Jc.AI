@@ -48,3 +48,15 @@ The vocabulary and counts are trained on the `data/facts.txt` from part 1. The a
 Part 3 introduces a linear neuron that predicts `weight * input + bias`. Starting from zero, it learns the rule `y = 2x + 1` from five numerical examples by adjusting its weight and bias with gradient descent to reduce mean squared error.
 
 The demo checks the calculated gradients against numerical estimates, shows progress over 100 updates, and predicts `7` for the unseen input `3`. Tests cover the gradients, parameter updates, convergence, and invalid input.
+
+## Building a Tiny GPT - Part 4
+
+- [Building a Tiny GPT - Part 4](https://jcsawyer.com/blog/2026-11-11-building-a-tiny-gpt-part-4)
+
+### Learning XOR with a Hidden Layer
+
+XOR outputs `1` when its two inputs differ and `0` when they match. A single linear neuron cannot fit all four cases. Part 4 adds a hidden layer with four `tanh` units, giving the network the nonlinearity it needs to learn XOR.
+
+The network uses backpropagation to calculate gradients and gradient descent to reduce mean squared error.
+
+The demo first trains a linear baseline, followed by training our small neural network with four tanh hidden units. It shows the network's mean squared error at five checkpoints over 10,000 training updates.
